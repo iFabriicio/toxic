@@ -1,0 +1,149 @@
+/* 🧠 Importar la fuente futurista Rajdhani */
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/* 🌿 CONTENEDOR PRINCIPAL */
+.sobremi-container {
+  text-align: center;
+  padding: 18px 10px;
+  position: relative;
+  overflow: hidden;
+  min-height: 240px;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌷 TÍTULO PRINCIPAL */
+.sobremi-titulo {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 600;
+  font-size: 1.45rem;
+  line-height: 1.3;
+  margin: -90px 0 40px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #5bcc81, #b2f7ef, #31ca6c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 6px rgba(100, 255, 200, 0.35);
+}
+
+
+
+/* 🌸 TEXTO CON EFECTO DE ESCRITURA POR PÁRRAFO */
+.texto-ajustable {
+  font-family: "Rajdhani", sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: var(--font-size, 0.10rem);
+  line-height: var(--line-height, 1.45rem);
+  letter-spacing: 0.6px;
+  max-width: var(--ancho-texto, 240px);
+
+  /* 🔥 Centramos el texto BIEN */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: -20px;
+  margin: 0 auto;
+  overflow: hidden;
+  white-space: normal;
+}
+
+/* ✍️ Cada párrafo se escribe uno por uno */
+.texto-ajustable p {
+  margin-bottom: 12px;
+  overflow: hidden;
+  display: inline-block;
+  white-space: nowrap;
+  border-right: 2px solid #ffffff;
+  color: #e9e9e9;
+  animation: escribir 3.8s steps(45, end) forwards, parpadeo 0.8s step-end infinite;
+}
+
+/* ✨ Segundo párrafo con retardo para que empiece después del primero */
+.texto-ajustable p:nth-child(2) {
+  animation-delay: 4.2s, 4.2s;
+}
+
+/* 🖋️ Animación de escritura */
+@keyframes escribir {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+/* 💡 Cursor parpadeante */
+@keyframes parpadeo {
+  from, to { border-color: transparent; }
+  50% { border-color: #666666; }
+}
+
+/* 💫 Brillitos decorativos */
+.brillitos-wrap .brillo {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: radial-gradient(white, rgba(228, 226, 226, 0.822));
+  opacity: 0.8;
+  animation: sparkle 4s ease-in-out infinite;
+}
+
+.brillo.b1 {
+  top: 30px;
+  left: 40px;
+  animation-delay: 0s;
+}
+
+.brillo.b2 {
+  top: 80px;
+  right: 40px;
+  animation-delay: 1.2s;
+}
+
+.brillo.b3 {
+  bottom: 40px;
+  left: 60px;
+  animation-delay: 2.4s;
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    transform: scale(1) translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5) translateY(-3px);
+    opacity: 1;
+  }
+}
+
+/* 📱 Responsivo */
+@media (max-width: 420px) {
+  .sobremi-container {
+    max-width: 260px;
+  }
+
+  .texto-ajustable {
+    max-width: 160px;
+    font-size: 0.78rem;
+    line-height: 1.3rem;
+  }
+}
+
+
+
