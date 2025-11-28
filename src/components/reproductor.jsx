@@ -4,9 +4,9 @@ import "./reproductor2.css";
 export default function Reproductor() {
 
   const songs = [
-    { src: process.env.PUBLIC_URL + "/music/Junior H - LA CHERRY.mp3", artist: "Junior H", title: "LA CHERRY" },
-    { src: process.env.PUBLIC_URL + "/music/Junior H - ROCKSTAR.mp3", artist: "Junior H", title: "ROCKSTAR" },
-    { src: process.env.PUBLIC_URL + "/music/Junior H - SE AMERITA.mp3", artist: "Junior H", title: "SE AMERITA" }
+    { src: "/music/Junior H - LA CHERRY.mp3", artist: "Junior H", title: "LA CHERRY" },
+    { src: "/music/Junior H - ROCKSTAR.mp3", artist: "Junior H", title: "ROCKSTAR" },
+    { src: "/music/Junior H - SE AMERITA.mp3", artist: "Junior H", title: "SE AMERITA" }
   ];
 
   const [current, setCurrent] = useState(0);
@@ -74,6 +74,7 @@ export default function Reproductor() {
     </div>
   );
 }
+
 
 
 
