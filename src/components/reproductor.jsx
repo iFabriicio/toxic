@@ -2,27 +2,30 @@ import React, { useState, useRef, useEffect } from "react";
 import "./reproductor2.css";
 
 export default function Reproductor() {
-const songs = [
-  { src: process.env.PUBLIC_URL + "/music/Junior H - LA CHERRY.mp3", artist: "Junior H", title: "LA CHERRY" },
-  { src: process.env.PUBLIC_URL + "/music/Junior H - ROCKSTAR.mp3", artist: "Junior H", title: "ROCKSTAR" },
-  { src: process.env.PUBLIC_URL + "/music/Junior H - SE AMERITA.mp3", artist: "Junior H", title: "SE AMERITA" }
-];
 
+  const songs = [
+    { src: process.env.PUBLIC_URL + "/music/Junior H - LA CHERRY.mp3", artist: "Junior H", title: "LA CHERRY" },
+    { src: process.env.PUBLIC_URL + "/music/Junior H - ROCKSTAR.mp3", artist: "Junior H", title: "ROCKSTAR" },
+    { src: process.env.PUBLIC_URL + "/music/Junior H - SE AMERITA.mp3", artist: "Junior H", title: "SE AMERITA" }
+  ];
 
   const [current, setCurrent] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const [expanded, setExpanded] = useState(false);
   const audioRef = useRef(null);
 
-  // ❌ QUITAMOS autoplay del useEffect
+  // 🔥 Cuando cambia de canción, recargar y reproducir SOLO si ya estaba sonando
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // si ya estaba sonando, reproducir el siguiente
+    audio.pause();
+    audio.load(); // recarga la nueva canción
+
     if (isPlaying) {
-      audio.play().catch(() => {});
+      audio.play().catch(err => console.log("Bloqueado al cambiar canción:", err));
     }
+
   }, [current]);
 
   const togglePlay = (e) => {
@@ -65,14 +68,14 @@ const songs = [
         <audio
           ref={audioRef}
           src={songs[current].src}
-          // ❌ quitado muted
-          // ❌ quitado autoplay
           onEnded={() => setCurrent((prev) => (prev + 1) % songs.length)}
         />
       </div>
     </div>
   );
 }
+
+
 
 
 
