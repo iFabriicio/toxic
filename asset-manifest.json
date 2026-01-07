@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/toxic/static/css/main.f7a91635.css",
+    "main.js": "/toxic/static/js/main.b8df92df.js",
+    "static/js/453.218cf9a1.chunk.js": "/toxic/static/js/453.218cf9a1.chunk.js",
+    "index.html": "/toxic/index.html",
+    "main.f7a91635.css.map": "/toxic/static/css/main.f7a91635.css.map",
+    "main.b8df92df.js.map": "/toxic/static/js/main.b8df92df.js.map",
+    "453.218cf9a1.chunk.js.map": "/toxic/static/js/453.218cf9a1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f7a91635.css",
+    "static/js/main.b8df92df.js"
+  ]
+}
