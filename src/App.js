@@ -12,16 +12,9 @@ export default function App() {
       {/* 🌅 Fondo base */}
       <img
         id="background-image"
-        src="https://i.imgur.com/pgqB0mK.png"
+        src="https://xatimg.com/image/bxIfxcKe8YrW.png"
         alt="fondo"
         className="background-image"
-      />
-
-      {/* ❄️ Capa de nieve (GIF o video transparente) */}
-      <img
-        src="https://i.imgur.com/oubBrjV.gif"
-        alt="nieve"
-        className="snow-overlay"
       />
 
       {/* ✅ UI principal (no se toca) */}
@@ -32,7 +25,7 @@ export default function App() {
 
               <div className="profile-pic">
                 <img
-                  src="https://i.imgur.com/toGRQnC.png"
+                  src="https://xatimg.com/image/nfbODRF2z8vA.png"
                   alt="perfil"
                 />
               </div>
